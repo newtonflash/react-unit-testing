@@ -10,6 +10,16 @@ sudo npm install -g karma-cli
 
 sudo npm install karma-mocha --save-dev
 
+## Enzyme
+
+sudo npm i --save-dev enzyme enzyme-adapter-react-16
+
+##sinon
+
+sudo npm install sinon
+
+## Karma
+
 
 ### run karma:
 ./node_modules/karma/bin/karma start
@@ -30,3 +40,6 @@ sudo npm install --save-dev watchify
 
 ### for reporting
 sudo npm install karma-mocha-reporter --save-dev
+
+### babel processor
+sudo npm install karma-babel-preprocessor --save-dev

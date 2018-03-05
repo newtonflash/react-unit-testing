@@ -10,7 +10,7 @@ module.exports = function(config) {
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['mocha', 'browserify'],
+    frameworks: ['mocha'],
 
 
     // list of files / patterns to load in the browser
@@ -28,10 +28,11 @@ module.exports = function(config) {
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
 
-      'src/**/*.test.js': [ 'browserify' ]
+      'src/**/*.test.js': ['babel', 'webpack']
     },
-
-
+    webpackPreprocessor: {
+      configPath: './config/webpack'
+    },
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
@@ -68,6 +69,6 @@ module.exports = function(config) {
     // how many browser should be started simultaneous
     concurrency: Infinity,
 
-    plugins: ['karma-mocha','karma-browserify', 'karma-chrome-launcher', 'karma-mocha-reporter']
+    plugins: ['karma-mocha', 'karma-chrome-launcher', 'karma-mocha-reporter', 'karma-babel-preprocessor', 'karma-webpack-preprocessor']
   })
 }
